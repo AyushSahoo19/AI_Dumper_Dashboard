@@ -8,6 +8,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -24,18 +25,18 @@
   </div>
   <nav class="sidebar-nav">
     <div class="nav-label">Monitoring</div>
-    <a href="#" data-section="command" class="active"><span class="icon">🛰️</span> Command Center</a>
-    <a href="#" data-section="dumper"><span class="icon">🚛</span> Dumper 360</a>
-    <a href="#" data-section="compare"><span class="icon">⚖️</span> Fleet Comparison</a>
+    <a href="#" data-section="command" class="active"><span class="icon"><i class='bx bx-grid-alt'></i></span> Command Center</a>
+    <a href="#" data-section="dumper"><span class="icon"><i class='bx bxs-truck'></i></span> Dumper 360</a>
+    <a href="#" data-section="compare"><span class="icon"><i class='bx bx-bar-chart-alt-2'></i></span> Fleet Comparison</a>
     <div class="nav-label">Intelligence</div>
-    <a href="#" data-section="analytics"><span class="icon">🔬</span> Analytics Lab <span class="nav-badge" style="background:#8b5cf6;display:inline-block">NEW</span></a>
-    <a href="#" data-section="gmap"><span class="icon">🗺️</span> Google Map Track <span class="nav-badge" style="background:#10b981;display:inline-block">LIVE</span></a>
-    <a href="#" data-section="gradient-kml"><span class="icon">⛰️</span> Gradient KML Map <span class="nav-badge" style="background:#f59e0b;display:inline-block">NEW</span></a>
-    <a href="#" data-section="alerts"><span class="icon">🚨</span> Alerts &amp; Actions <span class="nav-badge" id="nav-alert-badge">0</span></a>
-    <a href="#" data-section="monthly"><span class="icon">📅</span> Monthly Reports</a>
-    <a href="#" data-section="undulation"><span class="icon">🛣️</span> Undulation Monitor</a>
+    <a href="#" data-section="analytics"><span class="icon"><i class='bx bx-test-tube'></i></span> Analytics Lab <span class="nav-badge" style="background:#8b5cf6;display:inline-block">NEW</span></a>
+    <a href="#" data-section="gmap"><span class="icon"><i class='bx bx-map'></i></span> Google Map Track <span class="nav-badge" style="background:#10b981;display:inline-block">LIVE</span></a>
+    <a href="#" data-section="gradient-kml"><span class="icon"><i class='bx bx-map-alt'></i></span> Gradient KML Map <span class="nav-badge" style="background:#f59e0b;display:inline-block">NEW</span></a>
+    <a href="#" data-section="alerts"><span class="icon"><i class='bx bx-bell'></i></span> Alerts &amp; Actions <span class="nav-badge" id="nav-alert-badge">0</span></a>
+    <a href="#" data-section="monthly"><span class="icon"><i class='bx bx-calendar'></i></span> Monthly Reports</a>
+    <a href="#" data-section="undulation"><span class="icon"><i class='bx bx-pulse'></i></span> Undulation Monitor</a>
     <div class="nav-label">System</div>
-    <a href="#" data-section="settings"><span class="icon">⚙️</span> Settings &amp; Data</a>
+    <a href="#" data-section="settings"><span class="icon"><i class='bx bx-cog'></i></span> Settings &amp; Data</a>
   </nav>
   <div class="sidebar-footer">
     Haul Road Undulation &amp; Dumper Intelligence<br>Kalinga Iron Mine · Prototype v1.0
@@ -67,19 +68,32 @@
 
     <!-- ─── COMMAND CENTER ─── -->
     <section id="sec-command" class="section active">
-      <div class="kpis" id="cmd-kpis"></div>
       
+      <!-- Welcome & KPIs Row -->
+      <div class="grid" style="grid-template-columns: 1fr 2fr; margin-bottom: 28px; gap: 24px;">
+        <div class="card welcome-card" style="position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(90,141,238,0.02) 0%, rgba(90,141,238,0.08) 100%); border: 1px solid rgba(90,141,238,0.15);">
+          <div style="position: relative; z-index: 2;">
+            <h3 style="color: var(--accent); font-size: 20px; font-weight: 800; margin-bottom: 8px;">Welcome back, Operator! 🎉</h3>
+            <p style="color: var(--text-sec); font-size: 14px; font-weight: 500; margin-bottom: 24px; max-width: 85%; line-height: 1.5;">Your fleet is currently operating at an optimal health score. Review your latest insights.</p>
+            <button class="btn btn-primary" onclick="VIEWS.nav('alerts')">View Alerts</button>
+          </div>
+          <div style="position: absolute; right: -15px; bottom: -25px; font-size: 130px; opacity: 0.1; color: var(--accent); pointer-events: none;">
+            <i class='bx bxs-trophy'></i>
+          </div>
+        </div>
+        <div class="kpis" id="cmd-kpis" style="margin-bottom: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;"></div>
+      </div>
       <!-- Map Quick Links -->
       <div class="grid grid-2" style="margin-bottom: 28px;">
         <div class="card link-card gmap" onclick="VIEWS.nav('gmap')">
-          <div class="icon-wrap">🗺️</div>
+          <div class="icon-wrap"><i class='bx bx-map'></i></div>
           <div class="portal-content">
             <h3>Google Map Track</h3>
             <p class="sub">Interactive GPS telemetry map</p>
           </div>
         </div>
         <div class="card link-card kml" onclick="VIEWS.nav('gradient-kml')">
-          <div class="icon-wrap">⛰️</div>
+          <div class="icon-wrap"><i class='bx bx-map-alt'></i></div>
           <div class="portal-content">
             <h3>Gradient KML Map</h3>
             <p class="sub">Visual analysis of haul gradients</p>

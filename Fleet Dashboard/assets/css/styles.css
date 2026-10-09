@@ -70,8 +70,10 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); disp
   font-size: 14px; font-weight: 600; transition: var(--transition);
   position: relative; margin: 4px 16px; border-radius: 8px;
 }
+.sidebar-nav a .icon { font-size: 22px; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
 .sidebar-nav a:hover { color: var(--accent); background: rgba(90, 141, 238, 0.08); transform: translateX(4px); }
 .sidebar-nav a.active { color: #fff; background: var(--accent); box-shadow: 0 4px 12px 0 rgba(90,141,238,0.4); font-weight: 700; }
+.sidebar-nav a.active .icon { color: #fff; }
 .nav-badge { background: rgba(255, 91, 92, 0.12); color: var(--danger); font-size: 11px; padding: 2px 8px; border-radius: 12px; font-weight: 800; margin-left: auto; }
 .sidebar-nav a.active .nav-badge { background: rgba(255,255,255,0.2); color: #fff; }
 

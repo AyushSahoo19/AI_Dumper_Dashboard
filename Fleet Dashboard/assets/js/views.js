@@ -14,6 +14,10 @@ Chart.defaults.plugins.tooltip.borderWidth = 1;
 Chart.defaults.plugins.tooltip.boxPadding = 6;
 Chart.defaults.plugins.tooltip.padding = 12;
 Chart.defaults.plugins.tooltip.cornerRadius = 8;
+Chart.defaults.elements.line.tension = 0.4; // Smooth curves for line charts
+Chart.defaults.elements.line.borderWidth = 3; // Slightly thicker lines
+Chart.defaults.elements.point.radius = 0; // Hide points by default for a cleaner look
+Chart.defaults.elements.point.hoverRadius = 6;
 if(Chart.defaults.scale) {
   Chart.defaults.scale.grid.color = 'rgba(34, 41, 47, 0.05)';
 }
