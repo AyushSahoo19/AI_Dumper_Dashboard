@@ -81,6 +81,24 @@
           <div id="cmd-insights" class="insights-list"></div>
         </div>
       </div>
+      
+      <!-- Map Quick Links -->
+      <div class="grid grid-2" style="margin-bottom: 24px;">
+        <div class="card link-card" onclick="VIEWS.nav('gmap')" style="cursor:pointer; display:flex; align-items:center; gap:16px; border-left: 4px solid var(--primary);">
+          <div style="font-size:32px; background:rgba(59,130,246,0.1); padding:12px; border-radius:8px;">🗺️</div>
+          <div>
+            <h3 style="margin:0; font-size:16px; color:var(--text)">Google Map Track</h3>
+            <p class="sub" style="margin:4px 0 0 0">View GPS points, fuel rate, speed, and dumping RPM on an interactive map.</p>
+          </div>
+        </div>
+        <div class="card link-card" onclick="VIEWS.nav('gradient-kml')" style="cursor:pointer; display:flex; align-items:center; gap:16px; border-left: 4px solid var(--warning);">
+          <div style="font-size:32px; background:rgba(245,158,11,0.1); padding:12px; border-radius:8px;">⛰️</div>
+          <div>
+            <h3 style="margin:0; font-size:16px; color:var(--text)">Gradient KML Map</h3>
+            <p class="sub" style="margin:4px 0 0 0">Explore hauling gradients, flat areas, and bumps visually via KML layers.</p>
+          </div>
+        </div>
+      </div>
       <div class="grid grid-4">
         <div class="card"><h3>Alert Severity Mix</h3><p class="sub">Selected date, whole fleet</p><div class="chart-wrap sm"><canvas id="ch-sev-donut"></canvas></div></div>
         <div class="card"><h3>Worst Deviations Today</h3><p class="sub">Top dumper–parameter z-scores vs own baseline</p><div class="chart-wrap sm"><canvas id="ch-dev-bar"></canvas></div></div>
