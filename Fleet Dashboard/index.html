@@ -70,18 +70,18 @@
     <section id="sec-command" class="section active">
       
       <!-- Welcome & KPIs Row -->
-      <div class="grid" style="grid-template-columns: 1fr 2fr; margin-bottom: 28px; gap: 24px;">
-        <div class="card welcome-card" style="position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(90,141,238,0.02) 0%, rgba(90,141,238,0.08) 100%); border: 1px solid rgba(90,141,238,0.15);">
+      <div class="grid" style="grid-template-columns: 1.2fr 2.8fr; margin-bottom: 24px; gap: 20px;">
+        <div class="card welcome-card" style="position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(90,141,238,0.02) 0%, rgba(90,141,238,0.08) 100%); border: 1px solid rgba(90,141,238,0.15); padding: 16px 20px;">
           <div style="position: relative; z-index: 2;">
-            <h3 style="color: var(--accent); font-size: 20px; font-weight: 800; margin-bottom: 8px;">Welcome back, Operator! 🎉</h3>
-            <p style="color: var(--text-sec); font-size: 14px; font-weight: 500; margin-bottom: 24px; max-width: 85%; line-height: 1.5;">Your fleet is currently operating at an optimal health score. Review your latest insights.</p>
-            <button class="btn btn-primary" onclick="VIEWS.nav('alerts')">View Alerts</button>
+            <h3 style="color: var(--accent); font-size: 16px; font-weight: 800; margin-bottom: 4px;">Welcome back, Operator! 🎉</h3>
+            <p style="color: var(--text-sec); font-size: 12px; font-weight: 500; margin-bottom: 12px; max-width: 85%; line-height: 1.4;">Your fleet is currently operating at an optimal health score.</p>
+            <button class="btn btn-primary" style="padding: 6px 12px; font-size: 11px;" onclick="VIEWS.nav('alerts')">View Alerts</button>
           </div>
-          <div style="position: absolute; right: -15px; bottom: -25px; font-size: 130px; opacity: 0.1; color: var(--accent); pointer-events: none;">
+          <div style="position: absolute; right: -10px; bottom: -20px; font-size: 90px; opacity: 0.1; color: var(--accent); pointer-events: none;">
             <i class='bx bxs-trophy'></i>
           </div>
         </div>
-        <div class="kpis" id="cmd-kpis" style="margin-bottom: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;"></div>
+        <div class="kpis" id="cmd-kpis" style="margin-bottom: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;"></div>
       </div>
       <!-- Map Quick Links (Tabs) -->
       <div class="map-tabs">
