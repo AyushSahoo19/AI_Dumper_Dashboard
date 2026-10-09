@@ -19,6 +19,12 @@ window.VIEWS = {
   currentDate: null,
   currentDumper: null,
 
+  nav(section) {
+    this.activeSection = section;
+    this.renderCurrent();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  },
+
   toast(msg, type='ok') {
     const wrap = document.getElementById('toast-wrap');
     const el = document.createElement('div');
