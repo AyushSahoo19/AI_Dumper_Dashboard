@@ -4,13 +4,19 @@
    ═══════════════════════════════════════════════════════════════ */
 
 // Initialize Chart defaults
-Chart.defaults.color = '#94a3b8';
+Chart.defaults.color = '#828d99';
 Chart.defaults.font.family = "'Inter', system-ui, sans-serif";
-Chart.defaults.plugins.tooltip.backgroundColor = '#1e293b';
-Chart.defaults.plugins.tooltip.titleColor = '#f8fafc';
-Chart.defaults.plugins.tooltip.bodyColor = '#cbd5e1';
-Chart.defaults.plugins.tooltip.borderColor = '#334155';
+Chart.defaults.plugins.tooltip.backgroundColor = '#ffffff';
+Chart.defaults.plugins.tooltip.titleColor = '#475f7b';
+Chart.defaults.plugins.tooltip.bodyColor = '#475f7b';
+Chart.defaults.plugins.tooltip.borderColor = 'rgba(34, 41, 47, 0.1)';
 Chart.defaults.plugins.tooltip.borderWidth = 1;
+Chart.defaults.plugins.tooltip.boxPadding = 6;
+Chart.defaults.plugins.tooltip.padding = 12;
+Chart.defaults.plugins.tooltip.cornerRadius = 8;
+if(Chart.defaults.scale) {
+  Chart.defaults.scale.grid.color = 'rgba(34, 41, 47, 0.05)';
+}
 
 window.CHARTS = {};
 
