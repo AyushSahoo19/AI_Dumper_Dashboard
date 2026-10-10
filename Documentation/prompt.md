@@ -72,3 +72,21 @@ Whenever you make updates to the web dashboard UI or generate new KMLs/JS tracks
 - **Do not** overwrite `readyline_tracks.js` manually; always use `generate_tracks.py`.
 - **Do not** change the color scales for the gradients (Green <= 6.25%, Yellow 6.25-10%, Red > 10%) without user consent.
 - Keep the `styles.css` clean and modular. Avoid adding inline styles to `index.html`.
+
+## 7. AI Session Initialization Prompts (Copy-Paste)
+Use these exact prompts to kickstart a new AI session or workflow efficiently.
+
+### Prompt 1: Context Loading (Always run this first)
+```text
+Please read `Documentation/prompt.md` in its entirety. This is the Project Context and Runbook. Acknowledge that you understand the directory structure, the Frest/Sneat UI/UX guidelines, and the data pipeline workflow. Do not make any code changes yet.
+```
+
+### Prompt 2: Execute Data Pipeline for a New Excel File
+```text
+I have added a new Excel file to the working directory. Following the instructions in `Documentation/prompt.md` (Step 4), please execute the data pipeline from Step A to Step D. Ensure the CSV is generated, KML files are created in Output/, and the JS tracks are updated. Once finished, push the changes to GitHub.
+```
+
+### Prompt 3: Frontend / UI Development
+```text
+I want to make some updates to the Fleet Dashboard. Keeping the Frest/Sneat "Premium Light Mode" aesthetics in mind (soft diffused shadows, Boxicons, Inter font, pure white cards), please help me implement the following changes: [INSERT YOUR REQUEST HERE]. Make sure to update `styles.css` and `index.html` accordingly without breaking the current layout.
+```
