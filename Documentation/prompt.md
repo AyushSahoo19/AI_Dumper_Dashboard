@@ -37,14 +37,23 @@ Ensure Python dependencies are installed:
 pip install pandas simplekml pyproj
 ```
 
-### Step B: Generate KMLs for Google Earth / 3D Visualization
-Run the KML generator on your dataset:
+### Step B: Prepare and Convert Input Data (Excel to CSV)
+1. Place the new raw Excel file (e.g., `New_Readyline_Data.xlsx`) in the working directory.
+2. Ensure it contains the core telemetry columns: `Timestamp`, `Northing`, `Easting`, `Elevation`.
+3. Run the data conversion script to generate the cleaned CSV format needed by the pipeline:
 ```bash
-python kim_combined.py
+python convert_data.py --input "New_Readyline_Data.xlsx" --output "Readyline_Data.csv"
+```
+*(Note: `convert_data.py` also calculates `Shift Date` and `Shift` if they are missing).*
+
+### Step C: Generate KMLs for Google Earth / 3D Visualization
+Run the KML generator on your converted dataset:
+```bash
+python kim_combined.py --input "Readyline_Data.csv"
 ```
 *This parses `Readyline_Data.csv`, calculates the gradient between points, groups by shift/date, and outputs KMLs into the `Output/` directory.*
 
-### Step C: Generate Web Dashboard Data
+### Step D: Generate Web Dashboard Data
 Run the track generator to update the web dashboard's map data:
 ```bash
 python generate_tracks.py
